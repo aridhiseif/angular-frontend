@@ -1,0 +1,111 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>clients</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Client liste</h3>
+                    </div>
+                    <!-- /.card-header -->
+
+                    <div class="card-body">
+                        <p>
+                            <a
+                                routerLinkActive="list-item-active"
+                                routerLink="/addclient"
+                                class="btn btn-primary"
+                                role="button"
+                                >Add new Client</a
+                            >
+                        </p>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+
+                                    <th>Password</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of ItemsArray">
+                                    <th>{{ item._id }}</th>
+                                    <td>{{ item.firstname }}</td>
+                                    <td>{{ item.lastname }}</td>
+                                    <td>{{ item.email }}</td>
+
+                                    <td>{{ item.password }}</td>
+
+                                    <td class="d-flex justify-content-around">
+                                        <a
+                                            class="edit"
+                                            [routerLink]="[
+                                                '/updateclient/',
+                                                item._id
+                                            ]"
+                                            style="color: yellow"
+                                            title="Edit"
+                                            data-toggle="tooltip"
+                                        >
+                                            <i
+                                                class="fa fa-pencil-square"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                        <a
+                                            class="delete"
+                                            (click)="deleteClient(item._id)"
+                                            style="color: red"
+                                            title="Delete"
+                                            data-toggle="tooltip"
+                                        >
+                                            <i
+                                                class="fa fa-trash"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer clearfix"></div>
+                </div>
+                <!-- /.card -->
+
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- /.row -->
+
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>

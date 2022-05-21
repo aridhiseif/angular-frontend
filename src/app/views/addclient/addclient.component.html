@@ -1,0 +1,65 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Ajouter cours</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Blank Page</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container">
+        <form method="POST">
+            <div class="form-group input-group-lg">
+                <input #textbox class="form-control" placeholder="fistname" />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input #textbox2 class="form-control" placeholder="lastname" />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input #textbox3 class="form-control" placeholder="email" />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input
+                    #textbox5
+                    type="password"
+                    class="form-control"
+                    placeholder="password"
+                />
+            </div>
+
+            <div class="form-group">
+                <button
+                    class="btn btn-primary btn-block btn-lg"
+                    (click)="
+                        submitForm(
+                            textbox.value,
+                            textbox2.value,
+                            textbox3.value,
+
+                            textbox5.value
+                        )
+                    "
+                >
+                    Ajouter clients
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->
