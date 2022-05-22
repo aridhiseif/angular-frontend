@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Update cours</h1>
+                <h1>Update conducteur</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -41,7 +41,7 @@
             <div class="form-group input-group-lg">
                 <input
                     #textbox3
-                    value="{{ dataone.email }}"
+                    value="{{ dataone.tel }}"
                     class="form-control"
                 />
             </div>
@@ -49,6 +49,14 @@
             <div class="form-group input-group-lg">
                 <input
                     #textbox4
+                    value="{{ dataone.email }}"
+                    class="form-control"
+                />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input
+                    #textbox5
                     value="{{ dataone.password }}"
                     class="form-control"
                 />
@@ -62,11 +70,12 @@
                             textbox.value,
                             textbox2.value,
                             textbox3.value,
-                            textbox4.value
+                            textbox4.value,
+                            textbox5.value
                         )
                     "
                 >
-                    Update Admin
+                    Update conducteur
                 </button>
             </div>
         </form>

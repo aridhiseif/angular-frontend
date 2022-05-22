@@ -33,10 +33,14 @@ import {UpdatecourseComponent} from './views/updatecourse/updatecourse.component
 import {ClientComponent} from './views/client/client.component';
 import {AddclientComponent} from './views/addclient/addclient.component';
 import {UpdateclientComponent} from './views/updateclient/updateclient.component';
-
 import {AdminComponent} from './views/admin/admin.component';
 import {AddadminComponent} from './views/addadmin/addadmin.component';
 import {UpdateadminComponent} from './views/updateadmin/updateadmin.component';
+
+// My Custom components
+import {ConducteurComponent} from './views/conducteur/conducteur.component';
+import {UpdateconducteurComponent} from './views/updateconducteur/updateconducteur.component';
+import {AddconducteurComponent} from './views/addconducteur/addconducteur.component';
 
 import {FormateurComponent} from './views/formateur/formateur.component';
 import {AddformateurComponent} from './views/addformateur/addformateur.component';
@@ -74,7 +78,10 @@ registerLocaleData(localeEn, 'en-EN');
         UpdateadminComponent,
         FormateurComponent,
         AddformateurComponent,
-        UpdateformateurComponent
+        UpdateformateurComponent,
+        AddconducteurComponent,
+        ConducteurComponent,
+        UpdateconducteurComponent
     ],
     imports: [
         BrowserModule,

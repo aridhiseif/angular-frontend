@@ -19,37 +19,58 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-   
 
     <div class="container">
-        <form method="POST"  >
-      
-      
+        <form method="POST">
             <div class="form-group input-group-lg">
-                <input  #textbox value="{{dataone.firstname}}"   class="form-control" >
+                <input
+                    #textbox
+                    value="{{ dataone.firstname }}"
+                    class="form-control"
+                />
             </div>
-      
-                   <div class="form-group input-group-lg">
-                <input #textbox2 value="{{dataone.lastname}}"     class="form-control">
-            </div>
-      
+
             <div class="form-group input-group-lg">
-                <input #textbox3 value="{{dataone.email}}"     class="form-control">
+                <input
+                    #textbox2
+                    value="{{ dataone.lastname }}"
+                    class="form-control"
+                />
             </div>
+
             <div class="form-group input-group-lg">
-                <input #textbox4 value="{{dataone.tel}}"     class="form-control">
+                <input
+                    #textbox3
+                    value="{{ dataone.email }}"
+                    class="form-control"
+                />
             </div>
+
             <div class="form-group input-group-lg">
-                <input #textbox5 value="{{dataone.password}}"     class="form-control">
+                <input
+                    #textbox4
+                    value="{{ dataone.password }}"
+                    class="form-control"
+                />
             </div>
-       
-      
-      
+
             <div class="form-group">
-                <button class="btn btn-warning btn-block btn-lg"  (click)="submitForm(textbox.value,textbox2.value,textbox3.value,textbox4.value,textbox5.value)" >Update Client</button>
+                <button
+                    class="btn btn-warning btn-block btn-lg"
+                    (click)="
+                        submitForm(
+                            textbox.value,
+                            textbox2.value,
+                            textbox3.value,
+                            textbox4.value
+                        )
+                    "
+                >
+                    Update Client
+                </button>
             </div>
         </form>
-      </div>
+    </div>
 
     <!-- /.card -->
 </section>

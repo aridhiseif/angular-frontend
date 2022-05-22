@@ -1,0 +1,109 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>conducteurs</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-i"><a href="#">Home</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">liste de consucteur</h3>
+                    </div>
+                    <!-- /.card-header -->
+
+                    <div class="card-body">
+                        <p>
+                            <a
+                                routerLinkActive="list-i-active"
+                                routerLink="/addconducteur"
+                                class="btn btn-primary"
+                                role="button"
+                                >Add new conducteur
+                            </a>
+                        </p>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">ID</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>tel</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let i of ItemsArray">
+                                    <th>{{ i._id }}</th>
+                                    <td>{{ i.firstname }}</td>
+                                    <td>{{ i.lastname }}</td>
+                                    <td>{{ i.tel }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.password }}</td>
+
+                                    <td class="d-flex justify-content-around">
+                                        <a
+                                            class="edit"
+                                            [routerLink]="[
+                                                '/updateconducteur',
+                                                i._id
+                                            ]"
+                                            style="color: yellow"
+                                            title="Edit"
+                                            data-toggle="tooltip"
+                                        >
+                                            <i
+                                                class="fa fa-pencil-square"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                        <a
+                                            (click)="deleteconducteur(i._id)"
+                                            class="delete"
+                                            style="color: red"
+                                            title="Delete"
+                                            data-toggle="tooltip"
+                                            ><i
+                                                class="fa fa-trash"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer clearfix"></div>
+                </div>
+                <!-- /.card -->
+
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- /.row -->
+
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>

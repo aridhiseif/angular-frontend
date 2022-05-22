@@ -18,10 +18,14 @@ import {ClientComponent} from './views/client/client.component';
 import {AddclientComponent} from './views/addclient/addclient.component';
 import {UpdateclientComponent} from './views/updateclient/updateclient.component';
 
+// my Constum Component
+import {ConducteurComponent} from './views/conducteur/conducteur.component';
+import {AddconducteurComponent} from './views/addconducteur/addconducteur.component';
+import {UpdateconducteurComponent} from './views/updateconducteur/updateconducteur.component';
+
 import {AdminComponent} from './views/admin/admin.component';
 import {AddadminComponent} from './views/addadmin/addadmin.component';
 import {UpdateadminComponent} from './views/updateadmin/updateadmin.component';
-
 import {FormateurComponent} from './views/formateur/formateur.component';
 import {AddformateurComponent} from './views/addformateur/addformateur.component';
 import {UpdateformateurComponent} from './views/updateformateur/updateformateur.component';
@@ -40,16 +44,16 @@ const routes: Routes = [
                 component: BlankComponent
             },
             {
-                path: 'course',
-                component: CourseComponent
+                path: 'conducteur',
+                component: ConducteurComponent
             },
             {
-                path: 'addcourse',
-                component: AddcourseComponent
+                path: 'addconducteur',
+                component: AddconducteurComponent
             },
             {
-                path: 'updatecourse/:id',
-                component: UpdatecourseComponent
+                path: 'updateconducteur/:id',
+                component: UpdateconducteurComponent
             },
             {
                 path: 'client',
@@ -99,8 +103,7 @@ const routes: Routes = [
     },
     {
         path: 'login',
-        component: LoginComponent,
-        
+        component: LoginComponent
     },
     {
         path: 'register',

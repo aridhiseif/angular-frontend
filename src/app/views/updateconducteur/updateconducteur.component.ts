@@ -3,11 +3,11 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
-    selector: 'app-updateadmin',
-    templateUrl: './updateadmin.component.html',
-    styleUrls: ['./updateadmin.component.scss']
+    selector: 'app-updateconducteur',
+    templateUrl: './updateconducteur.component.html',
+    styleUrls: ['./updateconducteur.component.scss']
 })
-export class UpdateadminComponent implements OnInit {
+export class UpdateconducteurComponent implements OnInit {
     id = 1;
     dataone;
 
@@ -25,10 +25,10 @@ export class UpdateadminComponent implements OnInit {
         this.id = this.actRoute.snapshot.params.id;
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.http
             .get<any[]>(
-                'http://127.0.0.1:3000/admins/' + this.id,
+                'http://127.0.0.1:3000/conducteurs/' + this.id,
                 this.httpOptions
             )
             .subscribe((res: any) => {
@@ -37,18 +37,25 @@ export class UpdateadminComponent implements OnInit {
             });
     }
 
-    submitForm(value: string, value2: string, value3: string, value4: string) {
+    submitForm(
+        value: string,
+        value2: string,
+        value3: string,
+        value4: string,
+        value5: string
+    ) {
         const body = {
             firstname: value,
             lastname: value2,
-            email: value3,
-            password: value4
+            tel: value3,
+            email: value4,
+            password: value5
         };
 
         console.log(body);
         this.http
             .put(
-                'http://127.0.0.1:3000/admins/' + this.id,
+                'http://127.0.0.1:3000/conducteurs/' + this.id,
                 body,
                 this.httpOptions
             )
