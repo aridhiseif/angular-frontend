@@ -24,6 +24,9 @@ export class ApiService {
     getConducteurs(): Observable<any[]> {
         return this.httpClient.get<any[]>(this.apiServer + '/conducteurs/');
     }
+    getVoyages(): Observable<any[]> {
+        return this.httpClient.get<any[]>(this.apiServer + '/voyages');
+    }
 
     getEnseignats(): Observable<any[]> {
         return this.httpClient.get<any[]>(this.apiServer + '/formateurs/');
@@ -43,6 +46,14 @@ export class ApiService {
     deleteAdmin(id) {
         this.httpClient
             .delete(this.apiServer + '/admins/' + id)
+            .subscribe((data) => {
+                console.log(data);
+            });
+    }
+
+    deleteVoyage(id) {
+        this.httpClient
+            .delete(this.apiServer + '/voyages/' + id)
             .subscribe((data) => {
                 console.log(data);
             });

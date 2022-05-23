@@ -80,6 +80,13 @@ const routes: Routes = [
                 component: UpdateadminComponent
             },
             {
+                path: 'voyages',
+                loadChildren: () =>
+                    import('./views/voyages/voyages.module').then(
+                        (m) => m.VoyagesModule
+                    )
+            },
+            {
                 path: 'formateur',
                 component: FormateurComponent
             },
