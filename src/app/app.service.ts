@@ -27,6 +27,9 @@ export class ApiService {
     getVoyages(): Observable<any[]> {
         return this.httpClient.get<any[]>(this.apiServer + '/voyages');
     }
+    getCommentaire(): Observable<any[]> {
+        return this.httpClient.get<any[]>(this.apiServer + '/comments');
+    }
 
     getEnseignats(): Observable<any[]> {
         return this.httpClient.get<any[]>(this.apiServer + '/formateurs/');
@@ -54,6 +57,14 @@ export class ApiService {
     deleteVoyage(id) {
         this.httpClient
             .delete(this.apiServer + '/voyages/' + id)
+            .subscribe((data) => {
+                console.log(data);
+            });
+    }
+
+    deleteComment(id) {
+        this.httpClient
+            .delete(this.apiServer + '/comments/' + id)
             .subscribe((data) => {
                 console.log(data);
             });

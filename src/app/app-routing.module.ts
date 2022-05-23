@@ -87,6 +87,13 @@ const routes: Routes = [
                     )
             },
             {
+                path: 'comments',
+                loadChildren: () =>
+                    import('./views/comment/comment.module').then(
+                        (m) => m.CommentModule
+                    )
+            },
+            {
                 path: 'formateur',
                 component: FormateurComponent
             },
