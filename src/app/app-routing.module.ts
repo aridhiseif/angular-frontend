@@ -94,6 +94,13 @@ const routes: Routes = [
                     )
             },
             {
+                path: 'reclamations',
+                loadChildren: () =>
+                    import('./views/reclamation/reclamation.module').then(
+                        (m) => m.ReclamationModule
+                    )
+            },
+            {
                 path: 'formateur',
                 component: FormateurComponent
             },
