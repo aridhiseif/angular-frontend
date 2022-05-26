@@ -3,25 +3,26 @@ import {ApiService} from 'src/app/app.service';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
-    selector: 'app-list-reclamation',
-    templateUrl: './list-reclamation.component.html',
-    styleUrls: ['./list-reclamation.component.scss']
+    selector: 'app-list-rapport',
+    templateUrl: './list-rapport.component.html',
+    styleUrls: ['./list-rapport.component.scss']
 })
-export class ListReclamationComponent implements OnInit {
+export class ListRapportComponent implements OnInit {
     ItemsArray = [];
     constructor(private restApiService: ApiService, public router: Router) {}
 
     ngOnInit() {
-        this.restApiService.getReclamations().subscribe((res: any[]) => {
+        this.restApiService.getRapports().subscribe((res: any[]) => {
             this.ItemsArray = res;
             console.log(res);
         });
     }
-    deleteReclamation(id) {
-        this.restApiService.deleteReclamation(id);
+
+    deleteRapport(id) {
+        this.restApiService.deleteRapport(id);
         alert('delete with succes');
         this.router
-            .navigate(['/reclamations'])
+            .navigate(['/rapports'])
             .then(() => window.location.reload());
     }
 }

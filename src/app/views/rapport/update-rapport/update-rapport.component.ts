@@ -3,11 +3,11 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
-    selector: 'app-update-reclamation',
-    templateUrl: './update-reclamation.component.html',
-    styleUrls: ['./update-reclamation.component.scss']
+    selector: 'app-update-rapport',
+    templateUrl: './update-rapport.component.html',
+    styleUrls: ['./update-rapport.component.scss']
 })
-export class UpdateReclamationComponent implements OnInit {
+export class UpdateRapportComponent implements OnInit {
     id = 1;
     dataone;
 
@@ -28,7 +28,7 @@ export class UpdateReclamationComponent implements OnInit {
     ngOnInit(): void {
         this.http
             .get<any[]>(
-                'http://127.0.0.1:3000/reclamations/' + this.id,
+                'http://127.0.0.1:3000/rapports/' + this.id,
                 this.httpOptions
             )
             .subscribe((res: any) => {
@@ -41,13 +41,13 @@ export class UpdateReclamationComponent implements OnInit {
         const body = {
             userId: value,
             conducteurId: value2,
-            reclamation: value3
+            rapport: value3
         };
 
         console.log(body);
         this.http
             .put(
-                'http://127.0.0.1:3000/reclamations/' + this.id,
+                'http://127.0.0.1:3000/rapports/' + this.id,
                 body,
                 this.httpOptions
             )
@@ -55,8 +55,8 @@ export class UpdateReclamationComponent implements OnInit {
                 (response) => console.log(response),
                 (error) => console.log(error)
             );
-        alert('reclamation updated');
-        this.router.navigate(['/reclamations']);
+        alert('rapport updated');
+        this.router.navigate(['/rapports']);
         return false;
     }
 }

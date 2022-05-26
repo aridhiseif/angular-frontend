@@ -101,6 +101,13 @@ const routes: Routes = [
                     )
             },
             {
+                path: 'rapports',
+                loadChildren: () =>
+                    import('./views/rapport/rapport.module').then(
+                        (m) => m.RapportModule
+                    )
+            },
+            {
                 path: 'formateur',
                 component: FormateurComponent
             },

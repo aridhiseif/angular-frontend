@@ -33,6 +33,9 @@ export class ApiService {
     getReclamations(): Observable<any[]> {
         return this.httpClient.get<any[]>(this.apiServer + '/reclamations');
     }
+    getRapports(): Observable<any[]> {
+        return this.httpClient.get<any[]>(this.apiServer + '/rapports');
+    }
 
     getEnseignats(): Observable<any[]> {
         return this.httpClient.get<any[]>(this.apiServer + '/formateurs/');
@@ -75,6 +78,13 @@ export class ApiService {
     deleteReclamation(id) {
         this.httpClient
             .delete(this.apiServer + '/reclamations/' + id)
+            .subscribe((data) => {
+                console.log(data);
+            });
+    }
+    deleteRapport(id) {
+        this.httpClient
+            .delete(this.apiServer + '/rapports/' + id)
             .subscribe((data) => {
                 console.log(data);
             });
