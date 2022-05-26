@@ -108,6 +108,13 @@ const routes: Routes = [
                     )
             },
             {
+                path: 'ratings',
+                loadChildren: () =>
+                    import('./views/rating/rating.module').then(
+                        (m) => m.RatingModule
+                    )
+            },
+            {
                 path: 'formateur',
                 component: FormateurComponent
             },
