@@ -43,14 +43,18 @@ export class UpdateVoyageComponent implements OnInit {
         value2: string,
         value3: string,
         value4: string,
-        value5: string
+        value5: string,
+        value6: string,
+        value7: string
     ) {
         const body = {
             conducteurId: value,
             start: value2,
             destination: value3,
-            date: value4,
-            heure: value5
+            voiture: value4,
+            prix: value5,
+            date: value6,
+            heure: value7
         };
 
         console.log(body);

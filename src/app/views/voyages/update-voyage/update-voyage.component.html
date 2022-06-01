@@ -49,6 +49,22 @@
             <div class="form-group input-group-lg">
                 <input
                     #textbox4
+                    value="{{ dataone.voiture }}"
+                    class="form-control"
+                />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input
+                    #textbox5
+                    value="{{ dataone.prix }}"
+                    class="form-control"
+                />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input
+                    #textbox6
                     type="date"
                     value="{{ dataone.date }}"
                     class="form-control"
@@ -57,7 +73,7 @@
 
             <div class="form-group input-group-lg">
                 <input
-                    #textbox5
+                    #textbox7
                     type="time"
                     value="{{ dataone.heure }}"
                     class="form-control"
@@ -73,7 +89,9 @@
                             textbox2.value,
                             textbox3.value,
                             textbox4.value,
-                            textbox5.value
+                            textbox5.value,
+                            textbox6.value,
+                            textbox7.value
                         )
                     "
                 >
