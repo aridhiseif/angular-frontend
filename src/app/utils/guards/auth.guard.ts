@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         | Promise<boolean | UrlTree>
         | boolean
         | UrlTree {
-        if (!!localStorage.getItem('token')) {
+        if (!!localStorage.getItem('idAdmin')) {
             return true;
         }
         this.router.navigate(['/login']);

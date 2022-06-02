@@ -55,6 +55,10 @@ export class ApiService {
         return this.httpClient.get<any[]>(this.apiServer + '/videos/');
     }
 
+    getAdmin(id: string): Observable<any> {
+        return this.httpClient.get<any>(this.apiServer + '/admins/' + id);
+    }
+
     deleteAdmin(id) {
         this.httpClient
             .delete(this.apiServer + '/admins/' + id)
