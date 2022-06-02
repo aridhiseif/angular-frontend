@@ -58,6 +58,12 @@ export class ApiService {
     getAdmin(id: string): Observable<any> {
         return this.httpClient.get<any>(this.apiServer + '/admins/' + id);
     }
+    login(credentials): Observable<any> {
+        return this.httpClient.post<any>(
+            this.apiServer + '/login',
+            credentials
+        );
+    }
 
     deleteAdmin(id) {
         this.httpClient

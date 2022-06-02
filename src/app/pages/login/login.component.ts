@@ -31,11 +31,20 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     async login() {
-        this.apiService
-            .getAdmin('62894212e7ac6ceb5081033b')
-            .subscribe((data) => {
-                (this.admin = data), console.log(this.admin);
-            });
+        console.log(this.loginForm.value);
+        await this.apiService.login(this.loginForm.value).subscribe((val) => {
+            if (val == []) {
+                location.replace('/login');
+            } else {
+                console.log(val[0]);
+                localStorage.setItem('idAdmin', val[0]._id);
+                localStorage.setItem('firstname', val[0].firstname);
+                localStorage.setItem('lastname', val[0].lastname);
+                localStorage.setItem('email', val[0].email);
+                localStorage.setItem('status', val[0].status);
+                location.replace('/');
+            }
+        });
 
         /*   if (this.loginForm.valid) {
             this.isAuthLoading = true;

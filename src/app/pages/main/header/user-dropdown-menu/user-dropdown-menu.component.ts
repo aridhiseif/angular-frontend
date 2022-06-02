@@ -51,6 +51,7 @@ export class UserDropdownMenuComponent implements OnInit {
     }
 
     logout() {
-        this.appService.logout();
+        localStorage.clear();
+        location.replace('/login');
     }
 }
