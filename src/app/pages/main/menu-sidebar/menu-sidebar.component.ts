@@ -14,11 +14,16 @@ import {AppService} from 'src/app/utils/services/app.service';
     styleUrls: ['./menu-sidebar.component.scss']
 })
 export class MenuSidebarComponent implements OnInit, AfterViewInit {
+    adminFirstName: string;
+    adminlastName: string;
     @ViewChild('mainSidebar', {static: false}) mainSidebar;
     @Output() mainSidebarHeight: EventEmitter<any> = new EventEmitter<any>();
     constructor(public appService: AppService) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.adminFirstName = localStorage.getItem('firstname');
+        this.adminlastName = localStorage.getItem('lastname');
+    }
 
     ngAfterViewInit() {
         this.mainSidebarHeight.emit(
