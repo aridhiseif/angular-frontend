@@ -15,6 +15,9 @@ import {AppService} from 'src/app/utils/services/app.service';
 })
 export class UserDropdownMenuComponent implements OnInit {
     public user;
+    firstname:string;
+    lastname:string;
+
 
     @ViewChild('dropdownMenu', {static: false}) dropdownMenu;
     @HostListener('document:click', ['$event'])
@@ -32,6 +35,8 @@ export class UserDropdownMenuComponent implements OnInit {
 
     ngOnInit(): void {
         this.user = this.appService.user;
+        this.firstname = localStorage.getItem("firstname");
+        this.lastname = localStorage.getItem("lastname");
     }
 
     toggleDropdownMenu() {
