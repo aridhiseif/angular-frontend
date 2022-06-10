@@ -42,7 +42,9 @@
                                 <tr>
                                     <th style="width: 10px">ID</th>
                                     <th>User ID</th>
-                                    <th>Conducteur ID</th>
+                                    <th>voyage ID</th>
+                                    <th>email</th>
+                                    <th>sujet</th>
                                     <th>Reclamations</th>
                                 </tr>
                             </thead>
@@ -50,7 +52,9 @@
                                 <tr *ngFor="let item of ItemsArray">
                                     <th>{{ item._id }}</th>
                                     <td>{{ item.userId }}</td>
-                                    <td>{{ item.conducteurId }}</td>
+                                    <td>{{ item.voyageId }}</td>
+                                    <td>{{ item.email }}</td>
+                                    <td>{{ item.sujet }}</td>
                                     <td>{{ item.reclamation }}</td>
 
                                     <td class="d-flex justify-content-around">

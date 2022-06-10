@@ -37,11 +37,19 @@ export class UpdateReclamationComponent implements OnInit {
             });
     }
 
-    submitForm(value: string, value2: string, value3: string) {
+    submitForm(
+        value: string,
+        value2: string,
+        value3: string,
+        value4: string,
+        value5: string
+    ) {
         const body = {
             userId: value,
-            conducteurId: value2,
-            reclamation: value3
+            voyageId: value2,
+            email: value3,
+            sujet: value4,
+            reclamation: value5
         };
 
         console.log(body);

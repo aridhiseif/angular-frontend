@@ -41,24 +41,33 @@
                                 <tr>
                                     <th style="width: 10px">ID</th>
                                     <th>Conducteur ID</th>
+                                    <th>Matriculation</th>
                                     <th>Start</th>
-                                    <th>Distination</th>
-                                    <th>voiture</th>
-                                    <th>Prix</th>
+                                    <th>Destination</th>
+                                    <th>Nom</th>
                                     <th>Date</th>
                                     <th>Heure</th>
+                                    <th>Bagage</th>
+                                    <th>options</th>
+                                    <th>Heure</th>
+                                    <th>Prix</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let item of ItemsArray">
                                     <th>{{ item._id }}</th>
                                     <td>{{ item.conducteurId }}</td>
-                                    <td>{{ item.start }}</td>
-                                    <td>{{ item.destination }}</td>
-                                    <td>{{ item.voiture }}</td>
-                                    <td>{{ item.prix }} DT</td>
-                                    <td>{{ item.date | date: 'shortTime' }}</td>
+                                    <td>{{ item.mat }}</td>
+                                    <td>{{ item.depart }}</td>
+                                    <td>{{ item.fin }}</td>
+                                    <td>{{ item.nom }}</td>
+                                    <td>
+                                        {{ item.datec | date: 'shortTime' }}
+                                    </td>
                                     <td>{{ item.heure }}</td>
+                                    <td>{{ item.bags }}</td>
+                                    <td>{{ item.features }}</td>
+                                    <td>{{ item.prixvoyage }}</td>
 
                                     <td class="d-flex justify-content-around">
                                         <a
