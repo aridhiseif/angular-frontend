@@ -33,7 +33,7 @@
             <div class="form-group input-group-lg">
                 <input
                     #textbox2
-                    value="{{ dataone.start }}"
+                    value="{{ dataone.mat }}"
                     class="form-control"
                 />
             </div>
@@ -41,7 +41,7 @@
             <div class="form-group input-group-lg">
                 <input
                     #textbox3
-                    value="{{ dataone.destination }}"
+                    value="{{ dataone.depart }}"
                     class="form-control"
                 />
             </div>
@@ -49,7 +49,7 @@
             <div class="form-group input-group-lg">
                 <input
                     #textbox4
-                    value="{{ dataone.voiture }}"
+                    value="{{ dataone.fin }}"
                     class="form-control"
                 />
             </div>
@@ -57,14 +57,43 @@
             <div class="form-group input-group-lg">
                 <input
                     #textbox5
-                    value="{{ dataone.prix }}"
+                    value="{{ dataone.nom }}"
+                    class="form-control"
+                />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <select
+                    #textbox6
+                    class="form-select form-control"
+                    aria-label="Default select example"
+                >
+                    <option selected value="Non">bagage</option>
+                    <option selected value="Non">Non</option>
+                    <option value="oui">oui</option>
+                </select>
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input
+                    #textbox7
+                    value="{{ dataone.marque }}"
                     class="form-control"
                 />
             </div>
 
             <div class="form-group input-group-lg">
                 <input
-                    #textbox6
+                    #textbox8
+                    type="number"
+                    value="{{ dataone.nbdeplace }}"
+                    class="form-control"
+                />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input
+                    #textbox9
                     type="date"
                     value="{{ dataone.date }}"
                     class="form-control"
@@ -73,9 +102,26 @@
 
             <div class="form-group input-group-lg">
                 <input
-                    #textbox7
+                    #textbox10
                     type="time"
                     value="{{ dataone.heure }}"
+                    class="form-control"
+                />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input
+                    #textbox11
+                    value="{{ dataone.features }}"
+                    class="form-control"
+                />
+            </div>
+
+            <div class="form-group input-group-lg">
+                <input
+                    #textbox12
+                    type="number"
+                    value="{{ dataone.prixvoyage }}"
                     class="form-control"
                 />
             </div>
@@ -91,7 +137,12 @@
                             textbox4.value,
                             textbox5.value,
                             textbox6.value,
-                            textbox7.value
+                            textbox7.value,
+                            textbox8.value,
+                            textbox9.value,
+                            textbox10.value,
+                            textbox11.value,
+                            textbox12.value
                         )
                     "
                 >
